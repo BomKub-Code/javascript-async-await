@@ -33,3 +33,15 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+getJohnProfile()
+  .then((profileData) => {
+    // 1. แสดงผลข้อมูลที่ได้จาก getJohnProfile
+    console.log(profileData);
+    
+    // 2. เรียกใช้ getJohnOrders และ Return ออกไปเพื่อส่งต่อให้ .then() ตัวถัดไป
+    return getJohnOrders();
+  })
+  .then((ordersData) => {
+    // 3. แสดงผลข้อมูลที่ได้จาก getJohnOrders
+    console.log(ordersData);
+  });

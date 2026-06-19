@@ -12,3 +12,16 @@ let getJohnProfile = () => {
   });
 };
 // Start coding here
+async function displayJohnProfileError() {
+  try {
+    // โค้ดส่วนนี้จะลองดึงข้อมูล (เหมือนคาดหวังว่าจะ Resolve)
+    const data = await getJohnProfile();
+    console.log(data);
+  } catch (error) {
+    // ถ้า Promise ถูก Reject มันจะกระโดดมาทำงานใน block catch ทันที
+    console.log(error);
+  }
+}
+
+// เรียกใช้งานฟังก์ชัน
+displayJohnProfileError();
